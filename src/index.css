@@ -11,28 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.list-todo__item{
-  display: flex;
-  padding: 0 0 0 1rem;
-}
-.list-todo__item_done{
-  text-decoration:line-through;
-}
-.days{
+.week{
   display: flex;
   justify-content: space-between;
 }
-.cards{
+.week__todos{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-grow: 1;
 }
-.cards__item{
+.week__day{
+  height: 40px;
+  background-color: #dbd056;
+  color: #fff;
+  font-weight: 900;
+  margin: 4px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  box-shadow:  3px 3px 5px rgba(130, 112, 33, .5);
+}
+.week__todo{
+  min-height: 40px;
+  background-color: #eee8aa;
+  margin: 4px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  box-shadow:  3px 3px 5px rgba(130, 112, 33, .5);
+}
+.add-todo{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 200px;
-  border: 2px solid darkcyan;
-  border-radius: 10px;
-  cursor: grab;
+  flex-direction: column;
+  margin: 4px;
+  position: relative;
+}
+.add-todo__value{
+  width: 95%;
+    background: #d3ffe8;
+    border: 1px solid #449e65;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow:  3px 3px 5px rgba(68, 158, 101, .5);
+}
+.add-todo__submit{
+  margin: 0 0 0 2px;
+  font-size: 2rem;
+  color: #449e65;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 }
