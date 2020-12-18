@@ -71,6 +71,14 @@ function ListTodo(){
             }))
         }
     }
+    function closeTodo(board, item) {
+        const indexTodo = board.items.indexOf(item)
+        board.items.splice(indexTodo, 1)
+        setListTodos(listTodos.map(t => {
+            localStorage.setItem('todos', JSON.stringify(listTodos))
+            return t
+        }))
+    }
     return(
         <div className="week">
             {listTodos.map( weekDay => 
@@ -87,7 +95,7 @@ function ListTodo(){
                     onDragStart = {(e) => dragStartHandler(e, weekDay, todo)}
                     onDragEnd = {(e) => dragEndHandler(e)}
                     onDrop = {(e) => dropHandler(e, weekDay, todo)}
-                    >{todo.title}</div>
+                    >{todo.title}<button onClick={() => closeTodo(weekDay, todo)} className="week-todo__close">&#10006;</button></div>
                 )):<p>Add todo ...</p>}                
                 <AddTodo id={weekDay.idDay} onCreate = {addTodo} />
             </div>

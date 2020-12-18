@@ -36,6 +36,7 @@ code {
 }
 .week__todo{
   min-height: 40px;
+  position: relative;
   background-color: #eee8aa;
   margin: 4px;
   text-align: center;
@@ -68,4 +69,15 @@ code {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+}
+.week-todo__close{
+  background: transparent;
+  border: transparent;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 14px);
+  color: red;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
